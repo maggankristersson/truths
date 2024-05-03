@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aegis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title" style="opacity: 0;" id="shufflingText">Seek truth, find clarity</h1>
+    <p id="quote" style="opacity: 0;">"The only true wisdom is in knowing you know nothing." - Socrates</p>
+    <audio id="backgroundMusic" src="cello.mp3" type="audio/mpeg" loop>
+        enable the sound for full experience
+    </audio>
+    <button id="unveilButton">enlighten me</button>
+    <script>
+    const quotes = [
+        "The most incomprehensible thing about the universe is that it is comprehensible. - Albert Einstein",
+        "I am become death, the destroyer of worlds. - J. Robert Oppenheimer",
+        "E pur si muove. (And yet it moves.) - Galileo Galilei",
+        "If I have seen further than others, it is by standing upon the shoulders of giants. - Isaac Newton",
+        "The unexamined life is not worth living. - Socrates",
+        "The only thing we have to fear is fear itself. - Franklin D. Roosevelt",
+        "Cogito, ergo sum. (I think, therefore I am.) - René Descartes",
+        "Know thyself. - Socrates",
+        "We can easily forgive a child who is afraid of the dark; the real tragedy of life is when men are afraid of the light. - Plato",
+        "The measure of intelligence is the ability to change. - Albert Einstein",
+        "It is the mark of an educated mind to be able to entertain a thought without accepting it. - Aristotle",
+        "All that we are is the result of what we have thought. - Buddha",
+        "We are what we repeatedly do. Excellence, then, is not an act, but a habit. - Aristotle",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+        "Life is what happens when you're busy making other plans. - John Lennon",
+        "In the middle of difficulty lies opportunity. - Albert Einstein",
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves. - Victor Hugo",
+        "The mind is everything. What you think you become. - Buddha"
+        ];
+        let currentQuoteIndex = 0;
+
+        const title = document.getElementById('title');
+        const quoteElement = document.getElementById('quote');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const unveilButton = document.getElementById('unveilButton');
+
+        function changeQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            quoteElement.innerHTML = quotes[currentQuoteIndex];
+        }
+
+        function startExperience() {
+        backgroundMusic.play();
+        backgroundMusic.volume = 0.1;
+        title.style.opacity = 1;
+        quoteElement.style.opacity = 1;
+        quoteElement.style.animation = 'fadeInOut 12s infinite'; 
+        unveilButton.style.display = 'none';
+        document.body.classList.add('active');
+        quoteElement.addEventListener('animationiteration', changeQuote);
+    }
+
+        unveilButton.onclick = startExperience;
+    </script>
+</body>
+</html>
