@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost?</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+        #quote-container {
+            text-align: center;
+        }
+        #quote {
+            font-size: 24px;
+            margin-bottom: 10px; /* Adjusted margin for closer placement */
+        }
+        #not-found {
+            font-size: 20px;
+            font-style: italic; /* Italic style to mimic cursive appearance */
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="quote-container">
+        <div id="quote"></div>
+        <div id="not-found">404 not found</div> <!-- Added this line for the 404 message -->
+    </div>
+    <script>
+        const quotes = [
+            "What's your vision, where's your stride?",
+            "What's your purpose, where's your journey?",
+            "What's your goal, where's your direction?",
+            "What's your quest, where's your destination?",
+            "What's your aim, where's your trajectory?",
+            "What's your ambition, where's your route?",
+            "What's your mission, where's your course?",
+            "What's your aspiration, where's your way?",
+            "What's your objective, where's your path?",
+            "What's your intention, where's your roadmap?",
+            "Lost in thought, found in action.",
+            "Sometimes the wrong choices bring us to the right places.",
+            "In the chaos, seek the clarity within.",
+            "The path less traveled often leads to the most interesting discoveries.",
+            "In the darkest moments, the light within shines brightest.",
+            "To find yourself, lose the fear of being lost.",
+            "In the search for answers, embrace the questions.",
+            "Exploring the unknown can lead to unexpected treasures.",
+            "The adventure begins where the map ends.",
+            "Let curiosity guide you to new horizons."
+        ];
+        function generateRandomQuote() {
+            const randomNumber = Math.floor(Math.random() * quotes.length);
+            return quotes[randomNumber];
+        }
+        document.getElementById('quote').innerText = generateRandomQuote();
+    </script>
+</body>
+</html>
